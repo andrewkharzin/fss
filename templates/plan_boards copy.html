@@ -1,0 +1,36 @@
+{% extends 'base.html' %} {% load render_table from django_tables2 %} {% load
+static %} {% block content %}
+
+<div class="row" id="header-styling">
+  <div class="col-12">
+    <div class="card">
+      <div class="card-header">
+        <a class="heading-elements-toggle"
+          ><i class="la la-ellipsis-v font-medium-3"></i
+        ></a>
+        <div class="heading-elements">
+          <ul class="list-inline mb-0">
+            <li>
+              <a data-action="collapse"><i class="ft-minus"></i></a>
+            </li>
+            <li>
+              <a data-action="reload"><i class="ft-rotate-cw"></i></a>
+            </li>
+            <li>
+              <a data-action="expand"><i class="ft-maximize"></i></a>
+            </li>
+            <li>
+              <a data-action="close"><i class="ft-x"></i></a>
+            </li>
+          </ul>
+        </div>
+      </div>
+      <div class="card-content collapse show">
+        <div class="card-body card-dashboard"></div>
+        {% render_table table %}
+      </div>
+    </div>
+  </div>
+</div>
+
+{% endblock content %}
